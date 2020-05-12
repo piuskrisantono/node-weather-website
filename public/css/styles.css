@@ -149,9 +149,9 @@ button {
     max-width: 500px;
 }
 
-@media screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
     body {
-        font-size: 24px;
+        font-size: 18px;
     }
 
     h1 {
@@ -159,11 +159,11 @@ button {
     }
 
     header a {
-        font-size: 36px;
+        font-size: 24px;
     }
 
     input {
-        font-size: 24px;
+        font-size: 18px;
     }
 
     button {
@@ -176,7 +176,7 @@ button {
     }
 
     #data-location {
-        font-size: 36px;
+        font-size: 24px;
     }
 
 } 
