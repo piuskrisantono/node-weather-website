@@ -1,23 +1,33 @@
 const weatherForm = document.querySelector('form')
 const search = document.querySelector('input')
-const messageOne = document.querySelector('#message-1')
-const messageTwo = document.querySelector('#message-2')
+const weatherReport = document.querySelector('#weather-report')
+const dataLocation = document.querySelector('#data-location')
+const dataDescription = document.querySelector('#data-description')
+const imageDescription = document.querySelector('#image-description')
+const dataTemperature = document.querySelector('#data-temperature')
+const dataHumidity = document.querySelector('#data-humidity')
 
 weatherForm.addEventListener("submit", (e) => {
     e.preventDefault()
 
     const location = search.value
 
-    messageOne.textContent = "Loading..."
-    messageTwo.textContent = ""
+    weatherReport.style.display === "grid" ? weatherReport.style.display = "none" : "grid"
+
+    dataLocation.textContent = "Loading..."
+
 
     fetch("/weather?address=" + location).then((response) => {
         response.json().then((data) => {
             if (data.error) {
-                messageOne.textContent = data.error
+                dataLocation.textContent = data.error
             } else {
-                messageOne.textContent = data.location
-                messageTwo.textContent = data.forecastData
+                weatherReport.style.display = "grid"
+                dataLocation.textContent = data.location
+                dataDescription.textContent = data.forecastData.desc
+                imageDescription.setAttribute("src", data.forecastData.icon)
+                dataTemperature.textContent = data.forecastData.temp
+                dataHumidity.textContent = data.forecastData.humidity
             }
         })
     })

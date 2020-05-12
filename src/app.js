@@ -30,7 +30,7 @@ app.get('', (req, res) => {
 
 app.get('/about', (req, res) => {
     res.render('about', {
-        title: "About Me",
+        title: "About",
         name: "Pius Wiatmojo"
     })
 })
@@ -71,8 +71,6 @@ app.get('/products', (req, res) => {
             error: "You must provide a search term"
         })
     }
-
-
 
     console.log(req.query.search)
     res.send({

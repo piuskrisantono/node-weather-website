@@ -5,20 +5,42 @@
     <title>Home</title>
     <link rel="icon" href="/img/weather.png">
     <link rel="stylesheet" href="/css/styles.css">
+    {{!-- <script src="https://kit.fontawesome.com/6467daebbc.js" crossorigin="anonymous"></script> --}}
 </head>
 
 <body>
     <div class="main-content">
         {{>header}}
-        <p>Use this site to get your weather.</p>
+        <p>Get the current weather stats in any location.</p>
 
         <form>
-            <input type="text" placeholder="Type in a location">
-            <button type="submit">Search</button>
+            <input type="text" placeholder="Type in your location">
+            <button type="submit"><img class="search" src="/img/search.png" alt=""></button>
         </form>
 
-        <p id="message-1"></p>
-        <p id="message-2"></p>
+
+        <h3 id="data-location"></h3>
+
+        <div id="weather-report">
+            <div id="weather-description">
+                <img id="image-description" alt="">
+                <h3 id="data-description"></h3>
+            </div>
+            <div>
+                <div class="stat-wrapper">
+                    <h2 id="data-temperature"></h2>
+                    <h2>&#176;</h2>
+                </div>
+                Celcius
+            </div>
+            <div>
+                <div class="stat-wrapper">
+                    <h2 id="data-humidity"></h2><span>%</span>
+                </div>
+                Humidity
+            </div>
+        </div>
+
     </div>
 
     {{>footer}}

@@ -6,13 +6,14 @@ const forecast = (latitude, longitude, callback) => {
         if (error) {
             callback("Forecast service is unavailble.", undefined)
         } else if (body.error) {
-            callback("Location not found, please try another one", undefined)
+            callback("Location not found.", undefined)
         } else {
-            callback(undefined,
-                body.current.weather_descriptions[0] + ". It is currently " +
-                body.current.temperature + " degrees Celcius out. It feels like " +
-                body.current.feelslike + " degrees. It is now " +
-                body.current.humidity + "% on humidity."
+            callback(undefined, {
+                desc: body.current.weather_descriptions[0],
+                icon: body.current.weather_icons[0],
+                temp: body.current.temperature,
+                humidity: body.current.humidity
+            }
             )
         }
     })

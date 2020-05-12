@@ -1,31 +1,37 @@
 body{
-    color: #333;
+    color: white;
     font-family: Arial;
+    text-align: center;
     
-    max-width: 650px;
     min-height: 100vh;
-    
-    margin: 0 auto;
-    padding: 0 16px;
+
+    margin: 0;
+    padding: 0;
     
     display: flex;
     flex-direction: column;
+    align-items: center;
+
+    background-color: #333;
 }
 
 .main-content {
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 16px;
 }
 
 footer {
-    color: #888;
-    border-top: solid 1px #eee;
+    /* color: #888; */
+    /* border-top: solid 1px #eee; */
     margin-top: 16px;
     padding: 16px 0;
 }
 
 header {
-    margin-top: 16px;
-    margin-bottom:48px;
+    /* margin-top: 16px; */
+    margin-bottom: 16px; 
 }
 
 h1 {
@@ -34,24 +40,112 @@ h1 {
 }
 
 header a {
-    color: #888;
-    margin-right: 16px;
+    color: #ccc;
+    font-weight: bold;
+    margin: 8px;
     text-decoration: none;
 }
 
 #portrait {
-    width: 250px;
+    width: 150px;
+    height: 150px;
+    border: 8px white solid;
+    background-image: url("/img/me.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border-radius: 50%;
+    margin: 16px auto;
+}
+
+form {
+    background-color: white;
+    border-radius: 24px;
+    padding: 4px;
+    margin-bottom: 32px;
+    min-width: 30vw;
+    display: flex;
+    align-items: center;
 }
 
 input {
-    border: 1px solid #ccc;
-    padding: 8px;
+    border-radius: 16px; 
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    flex-grow: 1;
 }
 
 button {
     cursor: pointer;
-    padding: 8px;
-    border: 1px solid #888;
-    background-color: #888;
+    width: 40px; 
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background-color: #428bca;
+    font-size: 16px;
     color: white;
+}
+
+.search {
+    width:18px;
+}
+
+#data-location {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 350px;
+    margin: 24px auto;
+}
+
+#weather-report {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-width: 30vw;
+    overflow: hidden;
+    display: none;
+}
+
+
+#weather-report > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 8px;
+}
+
+
+#image-description {
+    border-radius: 50%;
+    border: 8px solid white;
+}
+
+#data-description{
+    margin-bottom: 0;
+}
+
+#weather-description {
+    grid-row: 1/3;
+    border-right: 1px solid #ccc;
+}
+
+#weather-report div h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 36px;
+
+}
+
+.stat-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: bold;
+}
+
+#about-content {
+    max-width: 500px;
 }
